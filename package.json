@@ -1,0 +1,14 @@
+{
+  "name": "NodeApp",
+  "version": "1.0.0",
+  "description": "NodeJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+   "dependencies": {
+    "node-wit": "1.1.0"
+  },
+  "author": "CodeDay",
+  "license": "ISC"
+}
