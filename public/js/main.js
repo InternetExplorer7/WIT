@@ -11,7 +11,6 @@ var rafID = null;
 var analyserContext = null;
 var canvasWidth, canvasHeight;
 var recIndex = 0;
-  socket.emit('blob', audioBlob);
 
 
 /* TODO:

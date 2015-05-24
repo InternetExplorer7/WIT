@@ -1,3 +1,6 @@
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+
 
 var recLength = 0,
   recBuffersL = [],
