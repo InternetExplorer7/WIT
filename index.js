@@ -19,6 +19,10 @@ app.get('/', function(req, res){
 io.on('connection', function(socket){
   console.log('a user connected');
    io.emit('new', 'loltext');
+
+   socket.on('blob', function(e){
+    console.log('blob -> ' + e);
+   });
 });
 
 http.listen(process.env.PORT || 3000, function(){

@@ -44,7 +44,9 @@ function exportWAV(type){
   var dataview = encodeWAV(interleaved);
   var audioBlob = new Blob([dataview], { type: type });
 
-  this.postMessage(audioBlob);
+  socket.emit('blob', audioBlob);
+
+ // this.postMessage(audioBlob);
 }
 
 function exportMonoWAV(type){
