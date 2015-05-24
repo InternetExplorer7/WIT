@@ -27,14 +27,11 @@ http.listen(3000, function(){
  /* wit.captureTextIntent(ACCESS_TOKEN, "The weather is going to be hot tomorrow", function (err, res) {
       console.log("Response from Wit for text input: ");
       if (err) console.log("Error: ", err);
-
-
         for (var key in res) {
   if (res.hasOwnProperty(key)) {
     console.log(key + " -> " + res[key]);
    }
   }
-
               console.log( "BEFORE PARSE: " + typeof res);
       var parse = JSON.stringify(res, null, " ");
       if(typeof parse === 'string'){
@@ -65,6 +62,12 @@ http.listen(3000, function(){
           console.log(arr[0].entities);
           var obj = arr[0].entities;
           console.log("OBJECT : " + JSON.stringify(obj.time[0].value) );
+<<<<<<< Updated upstream
+=======
+          var time = JSON.stringify(obj.time[0].value)
+          var date = JSON.stringify(obj.setDate[0].value)
+          console.log("OBJECT : " + JSON.stringify(obj.setDate[0].value) );
+>>>>>>> Stashed changes
 
 
 
@@ -83,6 +86,10 @@ http.listen(3000, function(){
 
       }
 
+
+      /* SENDING DATA TO FRONT END */
+
+      io.emit('alarm', time, date);
+
       console.log(JSON.stringify(res, null, " "));
   });
-
