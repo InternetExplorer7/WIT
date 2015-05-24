@@ -62,12 +62,9 @@ http.listen(process.env.PORT || 3000, function(){
           console.log(arr[0].entities);
           var obj = arr[0].entities;
           console.log("OBJECT : " + JSON.stringify(obj.time[0].value) );
-<<<<<<< Updated upstream
-=======
           var time = JSON.stringify(obj.time[0].value)
           var date = JSON.stringify(obj.setDate[0].value)
           console.log("OBJECT : " + JSON.stringify(obj.setDate[0].value) );
->>>>>>> Stashed changes
 
 
 
