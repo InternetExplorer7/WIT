@@ -3,14 +3,10 @@
   var ACCESS_TOKEN = "FCWG7IW7NJ3ZCOXGQRH3XHSNOKD2KE7I";
 
 /* SOCKET.IO */
-var express = require('express');
-var app = express();
-  //var app = require('express')();
+  var app = require('express')();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 
-
-app.use(express.static('public'));
 
 app.get('/', function(req, res){
   res.sendFile(__dirname + '/index.html');
