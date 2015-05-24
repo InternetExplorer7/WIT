@@ -1,5 +1,3 @@
-  <script src="/socket.io/socket.io.js"></script>
-  <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
 
 
 var recLength = 0,
@@ -47,7 +45,11 @@ function exportWAV(type){
   var dataview = encodeWAV(interleaved);
   var audioBlob = new Blob([dataview], { type: type });
 
-  socket.emit('blob', audioBlob);
+  $.ajax({
+    url: "index.html",
+    method: "POST"
+    data: {msg : type}
+  });
 
  // this.postMessage(audioBlob);
 }

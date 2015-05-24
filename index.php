@@ -1,4 +1,14 @@
 <!doctype html>
+
+
+<?php 
+
+var $msg = $_POST['msg'];
+
+echo "<script> alert('$msg');</script>";
+
+
+ ?>
 <html>
   <head>
 
