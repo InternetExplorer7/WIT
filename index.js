@@ -64,7 +64,7 @@ http.listen(3000, function(){
 
           console.log(arr[0].entities);
           var obj = arr[0].entities;
-          console.log("OBJECT : " + JSON.stringify(obj) )
+          console.log("OBJECT : " + JSON.stringify(obj.time[0].value) );
 
 
 
