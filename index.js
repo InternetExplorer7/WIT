@@ -24,15 +24,65 @@ http.listen(3000, function(){
 
   console.log("Sending text & audio to Wit.AI");
 
- /* wit.captureTextIntent(ACCESS_TOKEN, "Hello world", function (err, res) {
+ /* wit.captureTextIntent(ACCESS_TOKEN, "The weather is going to be hot tomorrow", function (err, res) {
       console.log("Response from Wit for text input: ");
       if (err) console.log("Error: ", err);
-      console.log(JSON.stringify(res, null, " "));
-  }); */
+
+
+        for (var key in res) {
+  if (res.hasOwnProperty(key)) {
+    console.log(key + " -> " + res[key]);
+   }
+  }
+
+              console.log( "BEFORE PARSE: " + typeof res);
+      var parse = JSON.stringify(res, null, " ");
+      if(typeof parse === 'string'){
+        console.log(typeof res);
+      } 
+      console.log( "AFTER PARSE: " + parse); 
+  }); 
+*/
 
   var stream = fs.createReadStream('sample.wav');
   wit.captureSpeechIntent(ACCESS_TOKEN, stream, "audio/wav", function (err, res) {
       console.log("Response from Wit for audio stream: ");
       if (err) console.log("Error: ", err);
+
+      var arr = [];
+
+
+    for (var key in res) {
+      console.log(key + " -> " + res[key]);
+      if( typeof res[key] === "object")
+      {
+        console.log("Success!" + res[key]);
+      //  for(var i in res[key]){
+          arr = res[key];
+          console.log(arr);
+
+
+          console.log(arr[0].entities);
+          var obj = arr[0].entities;
+          console.log("OBJECT : " + JSON.stringify(obj) )
+
+
+
+        //}
+        //for(var key1 in key)
+        //for (var i = 0; i < res[key].length;  i++) {
+        //console.log(key1 + " -> " + key[key1]);
+          //console.log(res[key][i]);
+          //if( i === 2)
+          
+           /* for(var entities in res[key][2]) {
+              console.log(entities + " -> " + res[key][2][entities]);
+            } */
+          
+        }
+
+      }
+
       console.log(JSON.stringify(res, null, " "));
   });
+
