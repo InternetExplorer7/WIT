@@ -2,10 +2,12 @@
   var fs = require('fs');
   var ACCESS_TOKEN = "FCWG7IW7NJ3ZCOXGQRH3XHSNOKD2KE7I";
 
-/* SOCKET.IO */
+/* SOCKET.IO */ 
   var app = require('express')();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
+
+app.use(express.static(__dirname + '/public'));
 
 
 app.get('/', function(req, res){
