@@ -45,13 +45,7 @@ function exportWAV(type){
   var dataview = encodeWAV(interleaved);
   var audioBlob = new Blob([dataview], { type: type });
 
-  $.ajax({
-    url: "index.html",
-    method: "POST"
-    data: {msg : type}
-  });
-
- // this.postMessage(audioBlob);
+  this.postMessage(audioBlob);
 }
 
 function exportMonoWAV(type){
